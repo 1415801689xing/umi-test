@@ -14,4 +14,6 @@ app.use(createLoading());
   app.use(plugin);
 });
 
-app.model({ namespace: 'goods', ...(require('C:/Users/yt037/Desktop/kaikeba/projects/umi-test/src/pages/goods/models/goods.js').default) });
+app.model({ namespace: 'cart', ...(require('C:/PrivateProjects/UMIJS/umi-test/src/models/cart.js').default) });
+app.model({ namespace: 'user', ...(require('C:/PrivateProjects/UMIJS/umi-test/src/models/user.js').default) });
+app.model({ namespace: 'goods', ...(require('C:/PrivateProjects/UMIJS/umi-test/src/pages/goods/models/goods.js').default) });

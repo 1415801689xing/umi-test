@@ -7,16 +7,20 @@ function getGoods(){
 
 export default {
   namespace: "goods",
-  state: [],
+  state: {
+    courses:{}, //课程
+    tags:[] //分类
+  },
   effects: {
     *getList(action, {call, put}){           
       const res = yield call(getGoods)
-      yield put({ type: 'initGoods', payload: res.data.result })
+      yield put({ type: 'initGoods', payload: res.data.data })
     }
   },
   reducers: {
     initGoods(state,{payload}){
-      return payload
+      const {tags, data: courses} = payload;
+      return {...state, tags, courses}
     },
     addGood(state, action) {
       console.log(action);
